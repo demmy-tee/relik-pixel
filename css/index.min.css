@@ -1,0 +1,106 @@
+    .header-banner{
+      padding: 5rem;
+      background: linear-gradient(rgba(92, 92, 222, 0.792), rgba(128, 128, 128, 0.753)), url(../images/img103.jpg);
+     
+    }
+    .navbar-brand{
+      font-size: 40px;
+      text-shadow: 2px 2px rgb(230, 205, 230);
+
+    }
+    .header-paragraph{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-style:oblique italic;
+      text-align: center;text-overflow:initial ;
+      letter-spacing: 10px;
+      font-size: 30px;
+      text-shadow: 2px 2px rgb(181, 126, 180);
+
+    }
+    .about{
+
+      background: linear-gradient(rgba(0, 0, 255, 0.354), rgba(128, 128, 128, 0.473));
+      contain:layout;
+    }
+    hr{
+      border: 2px solid;
+      height: 25px;
+      background-color: rgba(117, 78, 154, 0.621);
+    }
+    .navbar{
+      background: linear-gradient(rgba(92, 92, 222, 0.927), rgba(128, 128, 128, 0.897));
+      margin-bottom: 20rem;
+    }
+    
+    .contact-us{
+      background: linear-gradient(rgba(92, 92, 222, 0.498), rgba(128, 128, 128, 0.658));
+    margin: 20px 10px;
+    padding:20px 0 0 0;  
+    }
+  
+  
+ 
+  
+   
+ h3{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style:oblique italic;
+  text-align: center;text-overflow:initial ;
+  letter-spacing: 10px;
+  font-size: 30px;
+  text-shadow: 2px 2px rgb(181, 126, 180);
+ }
+ .footer{
+  margin-top: 4rem;
+  background: linear-gradient(rgba(92, 92, 222, 0.511), rgba(128, 128, 128, 0.326));
+
+ }
+ #footer-div{
+margin-top: 4rem;
+ }
+ .Gallery img{
+  transition: 1s;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right:auto;
+  margin-left:rem;
+  transform: 0;
+ }
+ .Gallery img:hover{
+  transform:scale(1.1);
+ }
+ #b1{
+  width:30%;
+  transition:1s;
+  text-align: center;
+  
+ }
+ #b1:hover{
+  width: 50%;
+  margin: auto;
+  margin-right:2rem;
+  margin-left:3rem;
+  padding:auto;
+ }
+ #b2{
+  width:50%;
+  transition:1s;
+  
+ }
+ #b2:hover{
+  width: 30%;
+  margin: auto;
+  margin-right:6rem;
+  margin-left:3rem;
+  padding:auto;
+ }
+ /* styling for small screen starts here */
+ @media only screen and(max-width: 450px) {
+   nav ul{
+    position: fixed;
+   display: column;
+   justify-content: space-between;
+   }
+ }
+ 

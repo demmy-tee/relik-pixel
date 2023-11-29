@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Content Change</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        #content {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .page {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        /* Optional styling for better visibility */
+        #content {
+            display: flex;
+            width: 300%;
+        }
+
+        .page {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        #page1 {
+            background-color: #f1c40f;
+        }
+
+        #page2 {
+            background-color: #3498db;
+        }
+
+        #page3 {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="content">
+            <div class="page" id="page1">Page 1</div>
+            <div class="page" id="page2">Page 2</div>
+            <div class="page" id="page3">Page 3</div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const content = document.getElementById('content');
+        let currentIndex = 0;
+
+        // Function to handle swipe events
+        function handleSwipe(event) {
+            const sensitivity = 50; // Minimum distance for a swipe to be considered
+            const touchStartX = event.changedTouches[0].clientX;
+
+            function handleTouchEnd(e) {
+                const touchEndX = e.changedTouches[0].clientX;
+                const deltaX = touchEndX - touchStartX;
+
+                if (Math.abs(deltaX) > sensitivity) {
+                    if (deltaX > 0 && currentIndex > 0) {
+                        currentIndex--;
+                    } else if (deltaX < 0 && currentIndex < 2) {
+                        currentIndex++;
+                    }
+
+                    updateContent();
+                }
+
+                document.removeEventListener('touchend', handleTouchEnd);
+            }
+
+            document.addEventListener('touchend', handleTouchEnd);
+        }
+
+        // Update content based on currentIndex
+        function updateContent() {
+            const translateValue = currentIndex * -100 + '%';
+            content.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        container.addEventListener('touchstart', handleSwipe);
+    </script>
+
+</body>
+
+</html>
